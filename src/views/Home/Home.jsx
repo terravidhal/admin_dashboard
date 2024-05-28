@@ -88,7 +88,7 @@ const Home = () => {
                    <Avatar height={50} width={50} name='Elame Vidhal'src="../src/assets/images/terra.jpg" />
                  </div>
                  <div className="profil-chevr">
-              <img src="../src/assets/images/morechevron.svg" alt="" />
+                     <img src="../src/assets/images/morechevron.svg" alt="" />
                  </div>
                </div>
             </div>
