@@ -1,0 +1,85 @@
+.Header {
+   background-color: #211535;
+   height: 410px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Header .circle1{
+position: absolute;
+width: 869px;
+height: 869px;
+right: 0;
+top: -207px;
+background: #DF8720;
+border-radius: 50%;
+
+}
+.Header .circle2{
+  position: absolute;
+  background-color: #211535;
+  height: 600px;
+  width: 600px;
+  border-radius: 50%;
+  top: -50px;
+  right: 80px;
+}
+.Header .circle3{
+position: absolute;
+width: 376px;
+height: 376px;
+left: -134px;
+top: -41px;
+background: #DF8720;
+border-radius: 50%;
+}
+.Header .circle4{
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  left: -100px;
+  top: 20px;
+  background: #211535;
+  border-radius: 50%;
+}
+.Header .circle5{
+  position: absolute;
+  width: 76px;
+  height: 420px;
+  right: 0px;
+  top: 0px;
+  background: #DF8720;
+  }
+.Header .title{
+   padding-top: 70px;
+   position: relative;
+   z-index: 99;
+}
+.Header .titles{
+  width: 653px;
+  height: 39px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Header .title1{
+width: 653px;
+height: 39px;
+font-weight: 600;
+font-size: 48px;
+line-height: 39px;
+color: #FFFFFF;
+}
+.Header .title2{
+width: 374px;
+height: 43px;
+font-weight: 400;
+font-size: 16px;
+line-height: 43px;
+}
+
+
+
+
+
+

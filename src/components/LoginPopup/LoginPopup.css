@@ -1,0 +1,32 @@
+.LoginPopup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 71px 36px;
+    gap: 36px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -40%);
+    width: 662px;
+    height: 376px;
+    background: #ffffff;
+    box-shadow: 0px 0px 32px rgba(9, 108, 159, 0.1);
+    border-radius: 16px;
+}
+.LoginPopup .title{
+   font-weight: 600;
+   font-size: 40px;
+   line-height: 120%;
+   color: #000000;
+}
+
+
+.LoginPopup .form-content{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  width: 516px;
+  height: 152px;
+}
