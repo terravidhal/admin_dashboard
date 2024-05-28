@@ -1,7 +1,7 @@
 import React from 'react';
 import './LoginPopup.css';
 import { Button, Checkbox, Input, InputGroup, InputLeftElement } from '@chakra-ui/react'
-import { EmailIcon, PhoneIcon } from '@chakra-ui/icons';
+import { Link } from 'react-router-dom';
 
 
 const LoginPopup = () => {
@@ -28,7 +28,9 @@ const LoginPopup = () => {
         <Button width='100%'
         leftIcon={<img src="../src/assets/images/out.svg" alt="" />} 
         height={54} colorScheme='linear-gradient(180deg, #69938F 0%, #4C847B 100%);'  
-         >Login</Button>
+         >
+          <Link to="/home">Login</Link>
+         </Button>
        </div>
     </div>
   );
