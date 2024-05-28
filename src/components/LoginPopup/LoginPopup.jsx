@@ -1,7 +1,7 @@
 import React from 'react';
 import './LoginPopup.css';
-import { Input, InputGroup, InputLeftElement } from '@chakra-ui/react'
-import { PhoneIcon } from '@chakra-ui/icons';
+import { Button, Checkbox, Input, InputGroup, InputLeftElement } from '@chakra-ui/react'
+import { EmailIcon, PhoneIcon } from '@chakra-ui/icons';
 
 
 const LoginPopup = () => {
@@ -13,14 +13,20 @@ const LoginPopup = () => {
          <InputLeftElement height={54} pointerEvents='none'>
            <img src="../src/assets/images/user.svg" alt="" />
          </InputLeftElement>
-         <Input height={54} type='text' borderColor='#DFDFDF'  placeholder='Username' _placeholder={{ opacity: 1, color: '#252122',fontSize:'16px' }} />
+         <Input  focusBorderColor='#4c847b' height={54} type='text' borderColor='#DFDFDF'  placeholder='Username' _placeholder={{ opacity: 1, color: '#252122',fontSize:'16px' }} />
        </InputGroup>
        <InputGroup>
          <InputLeftElement height={54} pointerEvents='none'>
-           <img src="../src/assets/images/user.svg" alt="" />
+           <img src="../src/assets/images/lock.svg" alt="" />
          </InputLeftElement>
-         <Input height={54} type='password' borderColor='#DFDFDF'  placeholder='Password' _placeholder={{ opacity: 1, color: '#252122',fontSize:'16px' }} />
+         <Input focusBorderColor='#4c847b' height={54} type='password' borderColor='#DFDFDF'  placeholder='Password' _placeholder={{ opacity: 1, color: '#252122',fontSize:'16px' }} />
        </InputGroup>
+        <div className="infos">
+           <Checkbox color='#252122'  colorScheme='green'  borderColor='#252122'>Remember Password</Checkbox>
+           <p>Forgot password?&nbsp;<a href="#">Click Here</a></p>
+        </div>
+        <Button leftIcon={<img src="../src/assets/images/out.svg" alt="" />} height={54} colorScheme='linear-gradient(180deg, #69938F 0%, #4C847B 100%);' width='100%' 
+         >Login</Button>
        </div>
     </div>
   );
