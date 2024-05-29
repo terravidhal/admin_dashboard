@@ -8,25 +8,31 @@ import { useState } from 'react';
 
 const columns = [
   {
-    title: 'Name',
-    dataIndex: 'name',
-    key: 'name',
+    title: 'Course Id',
+    dataIndex: 'courseId',
+    key: 'courseId',
     render: (text) => <a>{text}</a>,
   },
   {
-    title: 'Age',
-    dataIndex: 'age',
-    key: 'age',
+    title: 'Course Name',
+    dataIndex: 'CourseName',
+    key: 'CourseName',
     //responsive: ['md'],
   },
   {
-    title: 'Address',
-    dataIndex: 'address',
-    key: 'address',
+    title: 'Enrollment Date',
+    dataIndex: 'EnrollmentDate',
+    key: 'EnrollmentDate',
     //responsive: ['md'],
   },
   {
-    title: 'Tags',
+    title: 'Duration',
+    dataIndex: 'duration',
+    key: 'duration',
+    //responsive: ['md'],
+  },
+  {
+    title: 'Status',
     key: 'tags',
     dataIndex: 'tags',
     render: (_, { tags }) => (
@@ -50,8 +56,8 @@ const columns = [
     key: 'action',
     render: (_, record) => (
       <Space size="middle">
-        <a>Invite {record.name}</a>
-        <a>Delete</a>
+        <a><img src="../src/assets/images/yesGreen.svg" alt="" /></a>
+        <a><img src="../src/assets/images/croixRed.svg" alt="" /></a>
       </Space>
     ),
   },
@@ -60,30 +66,90 @@ const columns = [
 const data = [
   {
     key: '1',
-    name: 'John Brown',
-    age: 32,
-    address: 'New York No. 1 Lake Park',
+    courseId: 'John Brown',
+    CourseName: 'John Brown',
+    EnrollmentDate: 'New York No. 1 Lake Park',
+    duration: 32,
     tags: ['nice', 'developer'],
   },
   {
     key: '2',
-    name: 'Jim Green',
-    age: 42,
-    address: 'London No. 1 Lake Park',
+    courseId: 'Jim Green',
+    CourseName: 'John Brown',
+    EnrollmentDate: 'New York No. 1 Lake Park',
+    duration: 32,
     tags: ['loser'],
   },
   {
     key: '3',
-    name: 'Joe Black',
-    age: 32,
-    address: 'Sydney No. 1 Lake Park',
+    courseId: 'Joe Black',
+    CourseName: 'John Brown',
+    EnrollmentDate: 'New York No. 1 Lake Park',
+    duration: 32,
     tags: ['cool', 'teacher'],
   },
   {
     key: '4',
-    name: 'Joe Black2',
-    age: 32,
-    address: 'Sydney No. 1 Lake Park',
+    courseId: 'Joe Black2',
+    CourseName: 'John Brown',
+    EnrollmentDate: 'New York No. 1 Lake Park',
+    duration: 32,
+    tags: ['cool', 'teacher'],
+  },
+  {
+    key: '5',
+    courseId: 'Joe Black2',
+    CourseName: 'John Brown',
+    EnrollmentDate: 'New York No. 1 Lake Park',
+    duration: 32,
+    tags: ['cool', 'teacher'],
+  },
+  {
+    key: '6',
+    courseId: 'Joe Black2',
+    CourseName: 'John Brown',
+    EnrollmentDate: 'New York No. 1 Lake Park',
+    duration: 32,
+    tags: ['cool', 'teacher'],
+  },
+  {
+    key: '7',
+    courseId: 'Joe Black2',
+    CourseName: 'John Brown',
+    EnrollmentDate: 'New York No. 1 Lake Park',
+    duration: 32,
+    tags: ['cool', 'teacher'],
+  },
+  {
+    key: '8',
+    courseId: 'Joe Black2',
+    CourseName: 'John Brown',
+    EnrollmentDate: 'New York No. 1 Lake Park',
+    duration: 32,
+    tags: ['cool', 'teacher'],
+  },
+  {
+    key: '9',
+    courseId: 'Joe Black2',
+    CourseName: 'John Brown',
+    EnrollmentDate: 'New York No. 1 Lake Park',
+    duration: 32,
+    tags: ['cool', 'teacher'],
+  },
+  {
+    key: '10',
+    courseId: 'Joe Black2',
+    CourseName: 'John Brown',
+    EnrollmentDate: 'New York No. 1 Lake Park',
+    duration: 32,
+    tags: ['cool', 'teacher'],
+  },
+  {
+    key: '11',
+    courseId: 'Joe Black2',
+    CourseName: 'John Brown',
+    EnrollmentDate: 'New York No. 1 Lake Park',
+    duration: 32,
     tags: ['cool', 'teacher'],
   },
 ];
@@ -120,7 +186,7 @@ const Courses = () => {
         <div className="data-tables">
           <Table columns={columns} dataSource={data} 
                  pagination={{
-                  pageSize: 3,
+                  pageSize: 9,
                   position: [bottom],
                 }}
                  size="small"

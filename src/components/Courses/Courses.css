@@ -10,7 +10,7 @@
   box-sizing: border-box;
   padding: 27px 37px;
   margin: 0 20px;
-  height: 433px;
+  /* height: 433px; */
   background: #ffffff;
   border: 1px solid #e9ebf8;
   border-radius: 8px;
@@ -107,4 +107,30 @@
   transform: translateY(-50%);
   transition: background-color 0.2s;
   content: "";
+}
+
+:where(.css-dev-only-do-not-override-j9bb5n).ant-table-wrapper
+  .ant-table-pagination.ant-pagination {
+  margin: 50px 0 16px 0;
+}
+:where(.css-dev-only-do-not-override-j9bb5n).ant-pagination
+  .ant-pagination-item-active {
+  font-weight: 600;
+  background-color: #05253a;
+  border-color: #05253a;
+}
+:where(.css-dev-only-do-not-override-j9bb5n).ant-pagination
+  .ant-pagination-item-active
+  a {
+  color: #ffffff;
+}
+
+tbody.ant-table-tbody tr:nth-child(2n) {
+  background-color: #f6f6f6;
+}
+tbody.ant-table-tbody > tr > td {
+  height: 46px;
+  font-weight: 400;
+  font-size: 13px;
+  color: #0a0507;
 }
