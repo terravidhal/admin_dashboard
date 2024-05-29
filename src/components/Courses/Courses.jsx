@@ -3,6 +3,7 @@ import './Courses.css';
 import { Button } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { Space, Table, Tag } from 'antd';
+import { useState } from 'react';
 
 
 const columns = [
@@ -16,11 +17,13 @@ const columns = [
     title: 'Age',
     dataIndex: 'age',
     key: 'age',
+    //responsive: ['md'],
   },
   {
     title: 'Address',
     dataIndex: 'address',
     key: 'address',
+    //responsive: ['md'],
   },
   {
     title: 'Tags',
@@ -88,7 +91,7 @@ const data = [
 
 
 const Courses = () => {
- 
+  const [bottom, setBottom] = useState('bottomCenter');
 
   return (
     <div className="Courses">
@@ -115,7 +118,13 @@ const Courses = () => {
           </div>
         </div>
         <div className="data-tables">
-          <Table columns={columns} dataSource={data} pagination={{pageSize: 3,}} />
+          <Table columns={columns} dataSource={data} 
+                 pagination={{
+                  pageSize: 3,
+                  position: [bottom],
+                }}
+                 size="small"
+          />
         </div>
       </div>
     </div>

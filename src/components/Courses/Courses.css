@@ -52,3 +52,59 @@
   justify-content: space-between;
   margin-bottom: 40px;
 }
+
+:where(.css-dev-only-do-not-override-j9bb5n).ant-table-wrapper
+  .ant-table-thead
+  > tr
+  > th,
+:where(.css-dev-only-do-not-override-j9bb5n).ant-table-wrapper
+  .ant-table-thead
+  > tr
+  > td {
+  font-size: 9px;
+  font-weight: 600;
+  text-align: left;
+  color: #ffffff;
+  background: #1d3a4c;
+}
+
+:where(.css-dev-only-do-not-override-j9bb5n).ant-table-wrapper
+  .ant-table-container
+  table
+  > thead
+  > tr:first-child
+  > :first-child {
+  border-start-start-radius: 0px;
+}
+
+:where(.css-dev-only-do-not-override-j9bb5n).ant-table-wrapper
+  .ant-table-container
+  table
+  > thead
+  > tr:first-child
+  > :last-child {
+  border-start-end-radius: 0px;
+}
+
+:where(.css-dev-only-do-not-override-j9bb5n).ant-table-wrapper
+  .ant-table-thead
+  > tr
+  > th:not(:last-child):not(.ant-table-selection-column):not(
+    .ant-table-row-expand-icon-cell
+  ):not([colspan])::before,
+:where(.css-dev-only-do-not-override-j9bb5n).ant-table-wrapper
+  .ant-table-thead
+  > tr
+  > td:not(:last-child):not(.ant-table-selection-column):not(
+    .ant-table-row-expand-icon-cell
+  ):not([colspan])::before {
+  position: absolute;
+  top: 50%;
+  inset-inline-end: 0;
+  width: 1px;
+  height: 3.4em;
+  background-color: #f0f0f0;
+  transform: translateY(-50%);
+  transition: background-color 0.2s;
+  content: "";
+}
