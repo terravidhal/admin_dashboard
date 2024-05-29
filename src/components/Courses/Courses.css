@@ -10,10 +10,11 @@
   box-sizing: border-box;
   padding: 27px 37px;
   margin: 0 20px;
-  gap: 30px;
+  height: 433px;
   background: #ffffff;
   border: 1px solid #e9ebf8;
   border-radius: 8px;
+  margin-bottom: 70px;
 }
 .Courses .current-link {
   display: flex;
@@ -23,7 +24,7 @@
   width: 148px;
   height: 16px;
   margin-left: 20px;
-  margin-bottom: 45px;
+  margin-bottom: 35px;
 }
 .Courses .current1 {
   display: flex;
