@@ -1,6 +1,6 @@
 .Home {
-  height: 100vh;
-  background-color: blue;
+  /* height: 100vh; */
+  /* background-color: blue; */
   display: flex;
 }
 .Home .title {
@@ -30,7 +30,8 @@
 }
 
 .Home .home-content .profile-menu {
-  flex: 2;
+  /* flex: 2; */
+  height: 100px;
   background-color: #FFFFFF;
   display: flex;
   justify-content: end;
@@ -53,11 +54,11 @@ font-size: 16px;
 color: #0A0507;
 }
 .Home .home-content .HomeHome {
-  flex: 10;
+  /* flex: 10; */
   background-color: #F5F5F5;
 }
 .Home .home-content .Courses {
-  flex: 10;
+  /* flex: 10; */
   background-color: violet;
 }
 .Home .item-dashboard {

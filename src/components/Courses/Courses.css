@@ -1,3 +1,53 @@
 .Courses {
-    
+}
+.Courses .title-course {
+  padding: 20px 20px;
+  font-weight: 600;
+  font-size: 32px;
+  color: #000000;
+}
+.Courses .home-courses {
+  box-sizing: border-box;
+  padding: 27px 37px;
+  margin: 0 20px;
+  gap: 30px;
+  background: #ffffff;
+  border: 1px solid #e9ebf8;
+  border-radius: 8px;
+}
+.Courses .current-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3px;
+  width: 148px;
+  height: 16px;
+  margin-left: 20px;
+  margin-bottom: 45px;
+}
+.Courses .current1 {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+}
+.Courses .current-name {
+  font-weight: 400;
+  font-size: 13px;
+  color: #bdbdbd;
+}
+.Courses .current2 {
+  font-weight: 400;
+  font-size: 13px;
+  color: #05253a;
+}
+.Courses .table-title {
+  font-weight: 600;
+  font-size: 23px;
+  color: #000000;
+  line-height: 1;
+}
+.Courses .table-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
 }

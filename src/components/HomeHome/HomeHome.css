@@ -1,24 +1,24 @@
 .HomeHome {
 }
 .HomeHome .title-home {
-  padding: 20px 40px;
+  padding: 20px 60px;
   font-weight: 400;
   font-size: 32px;
   color: #000000;
 }
 .HomeHome .home-courses {
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   padding: 27px 37px;
-  margin: 0 10px;
-  gap: 30px;
-  width: 1136px;
+  margin: 0 20px;
+  /* width: 1136px; */
   background: #ffffff;
   border: 1px solid #e9ebf8;
   border-radius: 8px;
+}
+.HomeHome .courses-items {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 .HomeHome .course-item {
   box-sizing: border-box;
@@ -32,15 +32,21 @@
   align-items: start;
   justify-content: center;
   position: relative;
-  gap: 10px;
+  gap: 30px;
+  padding-left: 30px;
+}
+.HomeHome .course-item .part1 {
 }
 .HomeHome .course-item .design1 {
 }
 .HomeHome .course-item .design2 {
-    position: absolute;
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
 .HomeHome .course-item .name-course-item {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 50px;
   color: #ffffff;
+  line-height: 1.2;
 }
