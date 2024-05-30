@@ -1,0 +1,26 @@
+.course-item {
+  box-sizing: border-box;
+  width: 334px;
+  height: 282px;
+  background: #1d3a4c;
+  border: 1px solid #e9ebf8;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  position: relative;
+  gap: 30px;
+  padding-left: 30px;
+}
+.course-item .design2 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.course-item .name-course-item {
+  font-weight: 700;
+  font-size: 50px;
+  color: #ffffff;
+  line-height: 1.2;
+}

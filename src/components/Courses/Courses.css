@@ -1,4 +1,6 @@
 .Courses {
+  /* flex: 10; */
+  background-color: violet;
 }
 .Courses .title-course {
   padding: 20px 20px;
