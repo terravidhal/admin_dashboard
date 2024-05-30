@@ -46,15 +46,14 @@ const columns = [
     render: (_, { status }) => (
       <>
         {status.map((oneStatus) => {
-         // let color = oneStatus.length > 5 ? 'geekblue' : 'green';volcano
-          let color = "gray";
+          let color = "btnPending";
           if (oneStatus === 'completed') {
-            color = 'green';
+            color = 'btnComplete';
           }
           return (
-            <Tag color={color} key={oneStatus}>
-              {oneStatus}
-            </Tag>
+             <div className={color} key={oneStatus}>
+               {oneStatus}
+             </div>
           );
         })}
       </>
@@ -74,7 +73,7 @@ const columns = [
           oneAction === 'no' ? srcCurrent = srcNo : null
           oneAction === 'message' ? srcCurrent = srcMessg : null
           return (
-            <Space size="small">
+            <Space size="small" key={oneAction}>
               &nbsp;<a><img src={srcCurrent} alt="" /></a>
             </Space>
           );
@@ -231,9 +230,9 @@ const Courses = () => {
 
   //if (isPending) return 'Loading...'
 
-//  if (error) return 'An error has occurred: ' + error.message
+ // if (error) return 'An error has occurred: ' + error.message
 
- // console.log('data', data);
+
 
 
   return (
@@ -252,11 +251,11 @@ const Courses = () => {
         <div className="table-top">
           <div className="table-title">List of Courses</div>
           <div className="btn-add">
-          <Button fontSize='16px'fontWeight={400} height='44px' mb={2}  display="flex" justifyContent="start" width='216px'
-            leftIcon={<img src="../src/assets/images/add.svg" alt="" />} 
-             colorScheme='#4C847B;'  
-             >
-              <Link to="">Request new course</Link>
+            <Button fontSize='16px'fontWeight={400} height='44px' mb={2}  display="flex" justifyContent="start" width='216px'
+              leftIcon={<img src="../src/assets/images/add.svg" alt="" />} 
+               colorScheme='#4C847B;'  
+               >
+                <Link to="">Request new course</Link>
             </Button>
           </div>
         </div>
