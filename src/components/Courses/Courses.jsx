@@ -8,6 +8,7 @@ import axios from 'axios'
 
 
 
+
 const columns = [
   {
     title: 'Course Id',
@@ -83,153 +84,23 @@ const columns = [
   },
 ];
 
-const datas = [
-  {
-    key: '1',
-    courseId: 'John Brown',
-    CourseName: 'John Brown',
-    EnrollmentDate: 'New York No. 1 Lake Park',
-    EnrollmentTime: "5pm",
-    duration: 32,
-    status: ["in progress"],
-    actions: ['yes', 'no'],
-  },
-  {
-    key: '2',
-    courseId: 'Jim Green',
-    CourseName: 'John Brown',
-    EnrollmentDate: 'New York No. 1 Lake Park',
-    EnrollmentTime: "5pm",
-    duration: 32,
-    status: ["completed"],
-    actions: ['message'],
-  },
-  {
-    key: '3',
-    courseId: 'Joe Black',
-    CourseName: 'John Brown',
-    EnrollmentDate: 'New York No. 1 Lake Park',
-    EnrollmentTime: "5pm",
-    duration: 32,
-    status: ["in progress"],
-    actions: ['yes', 'no'],
-  },
-  {
-    key: '4',
-    courseId: 'Joe Black2',
-    CourseName: 'John Brown',
-    EnrollmentDate: 'New York No. 1 Lake Park',
-    EnrollmentTime: "5pm",
-    duration: 32,
-    status: ["completed"],
-    actions: ['message'],
-  },
-  {
-    key: '5',
-    courseId: 'Joe Black2',
-    CourseName: 'John Brown',
-    EnrollmentDate: 'New York No. 1 Lake Park',
-    EnrollmentTime: "5pm",
-    duration: 32,
-    status: ["in progress"],
-    actions: ['yes', 'no'],
-  },
-  {
-    key: '6',
-    courseId: 'Joe Black2',
-    CourseName: 'John Brown',
-    EnrollmentDate: 'New York No. 1 Lake Park',
-    EnrollmentTime: "5pm",
-    duration: 32,
-    status: ["completed"],
-    actions: ['message'],
-  },
-  {
-    key: '7',
-    courseId: 'Joe Black2',
-    CourseName: 'John Brown',
-    EnrollmentDate: 'New York No. 1 Lake Park',
-    EnrollmentTime: "5pm",
-    duration: 32,
-    status: ["in progress"],
-    actions: ['yes', 'no'],
-  },
-  {
-    key: '8',
-    courseId: 'Joe Black2',
-    CourseName: 'John Brown',
-    EnrollmentDate: 'New York No. 1 Lake Park',
-    EnrollmentTime: "5pm",
-    duration: 32,
-    status: ["completed"],
-    actions: ['message'],
-  },
-  {
-    key: '9',
-    courseId: 'Joe Black2',
-    CourseName: 'John Brown',
-    EnrollmentDate: 'New York No. 1 Lake Park',
-    EnrollmentTime: "5pm",
-    duration: 32,
-    status: ["in progress"],
-    actions: ['yes', 'no'],
-  },
-  {
-    key: '10',
-    courseId: 'Joe Black2',
-    CourseName: 'John Brown',
-    EnrollmentDate: 'New York No. 1 Lake Park',
-    EnrollmentTime: "5pm",
-    duration: 32,
-    status: ["completed"],
-    actions: ['message'],
-  },
-  {
-    key: '11',
-    courseId: 'Joe Black2',
-    CourseName: 'John Brown',
-    EnrollmentDate: 'New York No. 1 Lake Park',
-    EnrollmentTime: "5pm",
-    duration: 32,
-    status: ["in progress"],
-    actions: ['yes', 'no'],
-  },
-];
-
-
-
 const Courses = () => {
   //pagination dataTable
   const [bottom, setBottom] = useState('bottomCenter');
-  // loading datatable
-  const [loading, setLoading] = useState(false);
 
  // request
   const REQUEST = "/src/utils/dataTable.json";
 
- 
   const { isPending, error, data, isFetching } = useQuery({
     queryKey: ['dataInfos'],
-   /* queryFn: () =>
-      axios
-        .get(REQUEST)
-        .then((res) =>{
-          console.log(res.data);
-          return res.data;
-        }),*/
        queryFn: async () => {
-          // initialise loading
-          setLoading(true);
           const { data } = await axios.get(
             REQUEST,
           )
-          setLoading(false);
           return data
         },
   })
-
   //if (isPending) return 'Loading...'
-
  // if (error) return 'An error has occurred: ' + error.message
 
 
@@ -266,7 +137,7 @@ const Courses = () => {
                   position: [bottom],
                 }}
                 size="small"
-                loading={loading}
+                loading={isPending}
           />
         </div>
       </div>
