@@ -1,9 +1,11 @@
-import React from 'react';
+import React , { useState } from 'react';
 import './Courses.css';
 import { Button } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { Space, Table, Tag } from 'antd';
-import { useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import axios from 'axios'
+
 
 
 const columns = [
@@ -24,6 +26,12 @@ const columns = [
     dataIndex: 'EnrollmentDate',
     key: 'EnrollmentDate',
     //responsive: ['md'],
+    render: (_, object) => (
+      <div className="enrollment">
+        <p>{object.EnrollmentDate}</p>
+        <p className='enrollTime'>{object.EnrollmentTime}</p>
+      </div>
+    ),
   },
   {
     title: 'Duration',
@@ -33,18 +41,19 @@ const columns = [
   },
   {
     title: 'Status',
-    key: 'tags',
-    dataIndex: 'tags',
-    render: (_, { tags }) => (
+    key: 'status',
+    dataIndex: 'status',
+    render: (_, { status }) => (
       <>
-        {tags.map((tag) => {
-          let color = tag.length > 5 ? 'geekblue' : 'green';
-          if (tag === 'loser') {
-            color = 'volcano';
+        {status.map((oneStatus) => {
+         // let color = oneStatus.length > 5 ? 'geekblue' : 'green';volcano
+          let color = "gray";
+          if (oneStatus === 'completed') {
+            color = 'green';
           }
           return (
-            <Tag color={color} key={tag}>
-              {tag.toUpperCase()}
+            <Tag color={color} key={oneStatus}>
+              {oneStatus}
             </Tag>
           );
         })}
@@ -54,110 +63,178 @@ const columns = [
   {
     title: 'Action',
     key: 'action',
-    render: (_, record) => (
-      <Space size="middle">
-        <a><img src="../src/assets/images/yesGreen.svg" alt="" /></a>
-        <a><img src="../src/assets/images/croixRed.svg" alt="" /></a>
-      </Space>
+    render: (_, { actions }) => (
+      <>
+        {actions.map((oneAction) => {
+          let srcCurrent =""
+          let srcYes = "../src/assets/images/yesGreen.svg";
+          let srcNo =  "../src/assets/images/croixRed.svg";
+          let srcMessg = "../src/assets/images/messg.svg";
+          oneAction === 'yes' ? srcCurrent = srcYes : null
+          oneAction === 'no' ? srcCurrent = srcNo : null
+          oneAction === 'message' ? srcCurrent = srcMessg : null
+          return (
+            <Space size="small">
+              &nbsp;<a><img src={srcCurrent} alt="" /></a>
+            </Space>
+          );
+        })}
+      </>
     ),
   },
 ];
 
-const data = [
+const datas = [
   {
     key: '1',
     courseId: 'John Brown',
     CourseName: 'John Brown',
     EnrollmentDate: 'New York No. 1 Lake Park',
+    EnrollmentTime: "5pm",
     duration: 32,
-    tags: ['nice', 'developer'],
+    status: ["in progress"],
+    actions: ['yes', 'no'],
   },
   {
     key: '2',
     courseId: 'Jim Green',
     CourseName: 'John Brown',
     EnrollmentDate: 'New York No. 1 Lake Park',
+    EnrollmentTime: "5pm",
     duration: 32,
-    tags: ['loser'],
+    status: ["completed"],
+    actions: ['message'],
   },
   {
     key: '3',
     courseId: 'Joe Black',
     CourseName: 'John Brown',
     EnrollmentDate: 'New York No. 1 Lake Park',
+    EnrollmentTime: "5pm",
     duration: 32,
-    tags: ['cool', 'teacher'],
+    status: ["in progress"],
+    actions: ['yes', 'no'],
   },
   {
     key: '4',
     courseId: 'Joe Black2',
     CourseName: 'John Brown',
     EnrollmentDate: 'New York No. 1 Lake Park',
+    EnrollmentTime: "5pm",
     duration: 32,
-    tags: ['cool', 'teacher'],
+    status: ["completed"],
+    actions: ['message'],
   },
   {
     key: '5',
     courseId: 'Joe Black2',
     CourseName: 'John Brown',
     EnrollmentDate: 'New York No. 1 Lake Park',
+    EnrollmentTime: "5pm",
     duration: 32,
-    tags: ['cool', 'teacher'],
+    status: ["in progress"],
+    actions: ['yes', 'no'],
   },
   {
     key: '6',
     courseId: 'Joe Black2',
     CourseName: 'John Brown',
     EnrollmentDate: 'New York No. 1 Lake Park',
+    EnrollmentTime: "5pm",
     duration: 32,
-    tags: ['cool', 'teacher'],
+    status: ["completed"],
+    actions: ['message'],
   },
   {
     key: '7',
     courseId: 'Joe Black2',
     CourseName: 'John Brown',
     EnrollmentDate: 'New York No. 1 Lake Park',
+    EnrollmentTime: "5pm",
     duration: 32,
-    tags: ['cool', 'teacher'],
+    status: ["in progress"],
+    actions: ['yes', 'no'],
   },
   {
     key: '8',
     courseId: 'Joe Black2',
     CourseName: 'John Brown',
     EnrollmentDate: 'New York No. 1 Lake Park',
+    EnrollmentTime: "5pm",
     duration: 32,
-    tags: ['cool', 'teacher'],
+    status: ["completed"],
+    actions: ['message'],
   },
   {
     key: '9',
     courseId: 'Joe Black2',
     CourseName: 'John Brown',
     EnrollmentDate: 'New York No. 1 Lake Park',
+    EnrollmentTime: "5pm",
     duration: 32,
-    tags: ['cool', 'teacher'],
+    status: ["in progress"],
+    actions: ['yes', 'no'],
   },
   {
     key: '10',
     courseId: 'Joe Black2',
     CourseName: 'John Brown',
     EnrollmentDate: 'New York No. 1 Lake Park',
+    EnrollmentTime: "5pm",
     duration: 32,
-    tags: ['cool', 'teacher'],
+    status: ["completed"],
+    actions: ['message'],
   },
   {
     key: '11',
     courseId: 'Joe Black2',
     CourseName: 'John Brown',
     EnrollmentDate: 'New York No. 1 Lake Park',
+    EnrollmentTime: "5pm",
     duration: 32,
-    tags: ['cool', 'teacher'],
+    status: ["in progress"],
+    actions: ['yes', 'no'],
   },
 ];
 
 
 
 const Courses = () => {
+  //pagination dataTable
   const [bottom, setBottom] = useState('bottomCenter');
+  // loading datatable
+  const [loading, setLoading] = useState(false);
+
+ // request
+  const REQUEST = "/src/utils/dataTable.json";
+
+ 
+  const { isPending, error, data, isFetching } = useQuery({
+    queryKey: ['dataInfos'],
+   /* queryFn: () =>
+      axios
+        .get(REQUEST)
+        .then((res) =>{
+          console.log(res.data);
+          return res.data;
+        }),*/
+       queryFn: async () => {
+          // initialise loading
+          setLoading(true);
+          const { data } = await axios.get(
+            REQUEST,
+          )
+          setLoading(false);
+          return data
+        },
+  })
+
+  //if (isPending) return 'Loading...'
+
+//  if (error) return 'An error has occurred: ' + error.message
+
+ // console.log('data', data);
+
 
   return (
     <div className="Courses">
@@ -189,7 +266,8 @@ const Courses = () => {
                   pageSize: 9,
                   position: [bottom],
                 }}
-                 size="small"
+                size="small"
+                loading={loading}
           />
         </div>
       </div>

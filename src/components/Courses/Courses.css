@@ -55,6 +55,12 @@
   justify-content: space-between;
   margin-bottom: 40px;
 }
+.Courses .enrollment .enrollTime {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 9px;
+  color: #5d5a5b;
+}
 
 :where(.css-dev-only-do-not-override-j9bb5n).ant-table-wrapper
   .ant-table-thead
@@ -136,4 +142,13 @@ tbody.ant-table-tbody > tr > td {
   font-weight: 400;
   font-size: 13px;
   color: #0a0507;
+}
+:where(.css-dev-only-do-not-override-j9bb5n).ant-pagination
+  .ant-pagination-item-active:hover
+  a {
+  color: white;
+}
+:where(.css-dev-only-do-not-override-j9bb5n).ant-pagination
+  .ant-pagination-item-active:hover {
+  border-color: #05253a;
 }
