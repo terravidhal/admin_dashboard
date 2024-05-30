@@ -1,8 +1,11 @@
 import React from "react";
 import "./ProfilMenu.css";
-import { Avatar } from "@chakra-ui/react";
+import { Avatar} from "@chakra-ui/react";
 
-const ProfilMenu = () => {
+
+
+const ProfilMenu = ({onOpen}) => {
+
   return (
     <div className="profile-menu">
       <div className="profile-menu-content">
