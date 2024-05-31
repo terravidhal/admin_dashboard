@@ -18,13 +18,13 @@ const CourseItem = ({course}) => {
       <div className="view-course-btn">
         <Button
           fontWeight={400}
-          height="38px"
+          height="32px" //38px
           display="flex"
           justifyContent="start"
           color="#05253A"
-          fontSize="16px"
-          width="180px"
-          leftIcon={<img src="../src/assets/images/launch.svg" alt="" />}
+          fontSize="0.9rem" // 16px
+          width="150px" // 180px
+          leftIcon={<img width={20} height={21} src="../src/assets/images/launch.svg" alt="" />}
           colorScheme="#E2DDBF;"
         >
           <Link to="">{course.btnName}</Link>

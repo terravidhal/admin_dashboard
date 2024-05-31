@@ -67,7 +67,7 @@
   width: 64px;
   background: #e6f6d1;
   border-radius: 5px;
-  color: #27AE60;
+  color: #27ae60;
 }
 .Courses .btnPending {
   display: flex;
@@ -154,7 +154,7 @@ tbody.ant-table-tbody tr:nth-child(2n) {
 }
 tbody.ant-table-tbody > tr > td {
   height: 46px;
-  font-weight: 400;
+  font-weight: 400; /*400*/
   font-size: 0.7rem; /*13px*/
   color: #0a0507;
 }
@@ -166,4 +166,20 @@ tbody.ant-table-tbody > tr > td {
 :where(.css-dev-only-do-not-override-j9bb5n).ant-pagination
   .ant-pagination-item-active:hover {
   border-color: #05253a;
+}
+:where(.css-dev-only-do-not-override-j9bb5n).ant-table-wrapper .ant-table {
+  border-radius: 0px 0px 0 0;
+}
+:where(.css-dev-only-do-not-override-j9bb5n).ant-table-wrapper
+  .ant-table-container {
+  border-start-start-radius: 0px;
+  border-start-end-radius: 0px;
+}
+:where(.css-dev-only-do-not-override-j9bb5n).ant-table-wrapper
+  .ant-table
+  .ant-table-title,
+:where(.css-dev-only-do-not-override-j9bb5n).ant-table-wrapper
+  .ant-table
+  .ant-table-header {
+  border-radius: 0px 0px 0 0;
 }
