@@ -4,9 +4,9 @@
   background-color: #f5f5f5;
 }
 .Courses .title-course {
-  padding: 20px 20px;
-  font-weight: 600;
-  font-size: 32px;
+  padding: 10px 20px; /*20px*/
+  font-weight: 700;
+  font-size: 1.4rem; /*32px*/
   color: #000000;
 }
 .Courses .home-courses {
@@ -27,7 +27,7 @@
   width: 148px;
   height: 16px;
   margin-left: 20px;
-  margin-bottom: 35px;
+  margin-bottom: 20px; /* 35px; */
 }
 .Courses .current1 {
   display: flex;
@@ -45,26 +45,26 @@
   color: #05253a;
 }
 .Courses .table-title {
-  font-weight: 600;
-  font-size: 23px;
+  font-weight: 700;
+  font-size: 1.2rem; /*23px*/
   color: #000000;
   line-height: 1;
 }
 .Courses .table-top {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 40px;
+  margin-bottom: 20px; /*40px*/
 }
 .Courses .enrollment .enrollTime {
   font-style: normal;
   font-weight: 300;
-  font-size: 9px;
+  font-size: 0.6rem; /*9px*/
   color: #5d5a5b;
 }
 .Courses .btnComplete {
   display: flex;
   padding: 5px;
-  width: 72px;
+  width: 64px;
   background: #e6f6d1;
   border-radius: 5px;
   color: #27AE60;
@@ -72,7 +72,7 @@
 .Courses .btnPending {
   display: flex;
   padding: 5px;
-  width: 75px;
+  width: 66px;
   background: #eeeced;
   border-radius: 5px;
 }
@@ -85,8 +85,8 @@
   .ant-table-thead
   > tr
   > td {
-  font-size: 9px;
-  font-weight: 600;
+  font-size: 0.7rem; /*13px*/
+  font-weight: 500; /*600*/
   text-align: left;
   color: #ffffff;
   background: #1d3a4c;
@@ -98,7 +98,7 @@
   > thead
   > tr:first-child
   > :first-child {
-  border-start-start-radius: 0px;
+  border-start-start-radius: 0px !important;
 }
 
 :where(.css-dev-only-do-not-override-j9bb5n).ant-table-wrapper
@@ -107,7 +107,7 @@
   > thead
   > tr:first-child
   > :last-child {
-  border-start-end-radius: 0px;
+  border-start-end-radius: 0px !important;
 }
 
 :where(.css-dev-only-do-not-override-j9bb5n).ant-table-wrapper
@@ -135,7 +135,7 @@
 
 :where(.css-dev-only-do-not-override-j9bb5n).ant-table-wrapper
   .ant-table-pagination.ant-pagination {
-  margin: 50px 0 16px 0;
+  margin: 30px 0 0px 0; /* 50px 0 16px 0;*/
 }
 :where(.css-dev-only-do-not-override-j9bb5n).ant-pagination
   .ant-pagination-item-active {
@@ -155,7 +155,7 @@ tbody.ant-table-tbody tr:nth-child(2n) {
 tbody.ant-table-tbody > tr > td {
   height: 46px;
   font-weight: 400;
-  font-size: 13px;
+  font-size: 0.7rem; /*13px*/
   color: #0a0507;
 }
 :where(.css-dev-only-do-not-override-j9bb5n).ant-pagination

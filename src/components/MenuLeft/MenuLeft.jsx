@@ -8,7 +8,8 @@ import { Button } from "@chakra-ui/react";
 
 
 
-const MenuLeft = ({isOpen, onOpen, onClose, placement}) => {
+
+const MenuLeft = () => {
  
 
   return (
@@ -16,23 +17,25 @@ const MenuLeft = ({isOpen, onOpen, onClose, placement}) => {
       <div className="title">
         <img src="../src/assets/images/Group7.svg" alt="" />
       </div>
-      <div className="dashboard-btn">
+      <div className="menu-left-content">
+         <div className="dashboard-btn">
         <Button
-          fontSize="16px"
+          fontSize="0.8rem" // 16px
           fontWeight={400}
-          height="44px"
+          height="40px" // 44px
           mb={2}
           display="flex"
-          justifyContent="start"
+         // justifyContent="start"
+          justifyContent={{ base: 'center', md: 'center', lg: 'start' }}
           width="100%"
-          leftIcon={<img src="../src/assets/images/dashboard.svg" alt="" />}
+          leftIcon={<img width={20} height={20} src="../src/assets/images/dashboard.svg" alt="" />}
           colorScheme="#4C847B;"
         >
           <Link to="/home">Dashboard</Link>
         </Button>
         <div className="border-line"></div>
-      </div>
-      <div className="items-dashboard">
+         </div>
+         <div className="items-dashboard">
        {
           dataItemMenu.map((item,ind)=>{
             return (
@@ -43,21 +46,22 @@ const MenuLeft = ({isOpen, onOpen, onClose, placement}) => {
             );
           })
         }
-      </div>
-      <div className="logout-btn">
+         </div>
+         <div className="logout-btn">
         <Button
           fontWeight={400}
-          height="44px"
-          mt={5}
-          mb={5}
+          height="40px" // 44px
+          mt={3}
+         // mb={5}
           color="black"
-          fontSize="16px"
+          fontSize="0.8rem" // 16px
           width="100%"
-          leftIcon={<img src="../src/assets/images/logout.svg" alt="" />}
+          leftIcon={<img width={20} height={20} src="../src/assets/images/logout.svg" alt="" />}
           colorScheme="#E2DDBF;"
         >
           <Link to="/login">Logout</Link>
         </Button>
+         </div>
       </div>
     </div>
   );

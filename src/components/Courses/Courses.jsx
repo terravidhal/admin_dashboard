@@ -1,10 +1,11 @@
-import React , { useState } from 'react';
+import React , { useState, useEffect } from 'react';
 import './Courses.css';
 import { Button } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { Space, Table, Tag } from 'antd';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios'
+
 
 
 
@@ -108,7 +109,7 @@ const Courses = () => {
 
   return (
     <div className="Courses">
-       <div className="title-course">Courses</div>
+     <div className="title-course">Courses</div>
        <div className="current-link">
         <div className="current1">
           <div className="current-img">
@@ -122,7 +123,15 @@ const Courses = () => {
         <div className="table-top">
           <div className="table-title">List of Courses</div>
           <div className="btn-add">
-            <Button fontSize='16px'fontWeight={400} height='44px' mb={2}  display="flex" justifyContent="start" width='216px'
+            <Button fontSize='0.9rem' // 15px
+               fontWeight={400} 
+               height='40px' //44px
+               mb={2}  
+               display="flex" 
+              //justifyContent="start" 
+              justifyContent={{ base: 'center', md: 'center', lg: 'start' }}
+              width={{ base: '100%', md: '100%', lg: '100%' }}
+             // width='216px'
               leftIcon={<img src="../src/assets/images/add.svg" alt="" />} 
                colorScheme='#4C847B;'  
                >
@@ -138,9 +147,13 @@ const Courses = () => {
                 }}
                 size="small"
                 loading={isPending}
+                scroll={{
+                  y: 540,
+                }}
+                //justifyContent={{ base: 'center', md: 'center', lg: 'start' }}
           />
         </div>
-      </div>
+      </div> 
     </div>
   )
 }

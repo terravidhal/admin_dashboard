@@ -1,5 +1,5 @@
 .Home {
-  /* height: 100vh; */
+  height: 100vh;
   /* background-color: blue; */
   display: flex;
 }
@@ -7,5 +7,65 @@
   flex: 4.8;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
 } 
 
+/********* VUE PC ***************/
+@media screen and (min-width: 960px) and (max-width: 1200px) {
+}
+
+/********* VUE TABLETTE ***************/
+@media screen and (min-width: 768px) and (max-width: 960px) {
+  .Home .menu-left {
+    flex: 0.5;
+    
+  }
+  .Home .home-content {
+    flex: 4.8;
+  } 
+  .Home .item-dashboard {
+    justify-content: center;
+  }
+
+  .Home  .item-dashboard .name {
+    display: none;
+  }
+  .Home  .dashboard-btn button a {
+    display: none;
+  }
+  .Home  .logout-btn button a {
+    display: none;
+  }
+}
+
+/********* MOBILE ***************/
+
+@media screen and (max-width: 768px) {
+  .Home .menu-left {
+    flex: 0.5;
+    display: none;
+  }
+  .Home .home-content {
+    flex: 4.8;
+  } 
+
+  .Home  .item-dashboard .name {
+    display: none;
+  }
+  .Home  .dashboard-btn button a {
+    display: none;
+  }
+  .Home  .logout-btn button a {
+    display: none;
+  }
+  .Home  .btn-add button a {
+    display: none;
+  }
+  .Home  .home-courses {
+   /* width: 718px;
+    overflow: scroll;*/
+  }
+}
+@media screen and (max-width: 548px) {
+
+}
